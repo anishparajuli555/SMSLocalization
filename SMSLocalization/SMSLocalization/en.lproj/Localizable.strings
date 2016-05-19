@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SMSLocalization
+
+  Created by Macuser on 5/19/16.
+  Copyright © 2016 Macuser. All rights reserved.
+*/
+KUserName = "UserName";
+KPassword ="Password";
+KName = "Name:";
+KPwd = "Pwd:";
+KLogin = "Log In";

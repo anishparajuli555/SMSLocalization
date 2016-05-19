@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SMSLocalization
+
+  Created by Macuser on 5/19/16.
+  Copyright © 2016 Macuser. All rights reserved.
+*/
+KUserName = "käyttäjätunnus";
+KPassword ="Salasana";
+KName = "Nimi:";
+KPwd = "piwd:";
+KLogin = "Kirjaudu sisään";
