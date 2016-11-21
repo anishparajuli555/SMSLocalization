@@ -10,61 +10,54 @@ import UIKit
 
 class LanguageManager: NSObject {
     
-    var availableLocales = [Locale]()
+    
+    var availableLocales = [CustomLocale]()
     static let sharedInstance = LanguageManager()
+    var lprojBasePath = String()
     
-    override init() {
+    override fileprivate init() {
         
-        let english = Locale()
-        english.initWithLanguageCode("en", countryCode: "gb", name: "United Kingdom")
-        
-        let finnish  = Locale()
-        finnish.initWithLanguageCode("fi", countryCode: "fi", name: "Finland")
+        super.init()
+        let english = CustomLocale(languageCode: GlobalConstants.englishCode, countryCode: "gb", name: "United Kingdom")
+        let finnish  = CustomLocale(languageCode: GlobalConstants.finnishLangCode, countryCode: "fi", name: "Finland")
         self.availableLocales = [english,finnish]
-        
+        self.lprojBasePath =  getSelectedLocale()
     }
     
-    func getCurrentBundle()->NSBundle{
-        
-        let bundlePath = NSBundle.mainBundle().pathForResource(getSelectedLocale(), ofType: "lproj")
-        let bundle = NSBundle(path: bundlePath!)
-        return bundle!
-        
-    }
     
-    private func getSelectedLocale()->String{
-
-        let lang = NSLocale.preferredLanguages()
-        let languageComponents: [String : String] = NSLocale.componentsFromLocaleIdentifier(lang[0])
+    fileprivate func getSelectedLocale()->String{
         
-        if let languageCode: String = languageComponents[NSLocaleLanguageCode]{
-        
-            for locale in availableLocales {
-                if(locale.languageCode == languageCode){
+        let lang = Locale.preferredLanguages//returns array of preferred languages
+        let languageComponents: [String : String] = Locale.components(fromIdentifier: lang[0])
+        if let languageCode: String = languageComponents["kCFLocaleLanguageCodeKey"]{
+            
+            for customlocale in availableLocales {
+                
+                if(customlocale.languageCode == languageCode){
                     
-                    return locale.languageCode!
+                    return customlocale.languageCode!
                 }
             }
         }
         return "en"
     }
     
-    func setLocale(langCode:String){
+    func getCurrentBundle()->Bundle{
         
-        NSUserDefaults.standardUserDefaults().setObject([langCode], forKey: "AppleLanguages")
-        NSUserDefaults.standardUserDefaults().synchronize()
-        
+        if let bundle = Bundle.main.path(forResource: lprojBasePath, ofType: "lproj"){
+            
+            return Bundle(path: bundle)!
+            
+        }else{
+            
+            fatalError("lproj files not found on project directory. /n Hint:Localize your strings file")
+        }
     }
-}
-class Locale: NSObject {
-    var name:String?
-    var languageCode:String?
-    var countryCode:String?
     
-    func initWithLanguageCode(languageCode: String,countryCode:String,name: String)->AnyObject{
-        self.name = name
-        self.languageCode = languageCode
-        self.countryCode = countryCode
-        return self
+    func setLocale(_ langCode:String){
+        
+        UserDefaults.standard.set([langCode], forKey: "AppleLanguages")//replaces Locale.preferredLanguages
+        UserDefaults.standard.synchronize()
+        self.lprojBasePath =  getSelectedLocale()
     }
 }

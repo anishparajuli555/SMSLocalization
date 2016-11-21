@@ -22,11 +22,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginBtn: UIButton!
     
     
-    var bundle: NSBundle = NSBundle(){
+    var bundle: Bundle = Bundle(){
         didSet{
             
             localizeString()
-            
         }
     }
 
@@ -36,23 +35,17 @@ class ViewController: UIViewController {
         passwordTxtField.placeholder = NSLocalizedString("KPassword", bundle: bundle, comment: "hello")
         nameLbl.text =  NSLocalizedString("KName", bundle: bundle, comment: "hello")
         pwdLbl.text =  NSLocalizedString("KPwd", bundle: bundle, comment: "hello")
-        loginBtn.setTitle(NSLocalizedString("KLogin", bundle: bundle, comment: "hello"), forState: UIControlState.Normal)
+        loginBtn.setTitle(NSLocalizedString("KLogin", bundle: bundle, comment: "hello"), for: UIControlState())
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bundle = LanguageManager.sharedInstance.getCurrentBundle()
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
-    @IBAction func showAlertInEnglishActn(sender: AnyObject) {
+    @IBAction func showAlertInEnglishActn(_ sender: AnyObject) {
         
         LanguageManager.sharedInstance.setLocale("en")
         bundle = LanguageManager.sharedInstance.getCurrentBundle()
@@ -61,7 +54,7 @@ class ViewController: UIViewController {
    
     
     
-    @IBAction func showAlertInFinishActn(sender: AnyObject) {
+    @IBAction func showAlertInFinishActn(_ sender: AnyObject) {
         
         LanguageManager.sharedInstance.setLocale("fi")
         bundle = LanguageManager.sharedInstance.getCurrentBundle()

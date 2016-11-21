@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		294234451DE3141D00E08984 /* CustomLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294234441DE3141D00E08984 /* CustomLocale.swift */; };
+		294234481DE3143F00E08984 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294234471DE3143F00E08984 /* GlobalConstants.swift */; };
 		6B7A98D41CEDA60A0046E924 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A98D31CEDA60A0046E924 /* AppDelegate.swift */; };
 		6B7A98D61CEDA60A0046E924 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A98D51CEDA60A0046E924 /* ViewController.swift */; };
 		6B7A98D91CEDA60A0046E924 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B7A98D71CEDA60A0046E924 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		294234441DE3141D00E08984 /* CustomLocale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLocale.swift; sourceTree = "<group>"; };
+		294234471DE3143F00E08984 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		6B7A98D01CEDA60A0046E924 /* SMSLocalization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSLocalization.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7A98D31CEDA60A0046E924 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B7A98D51CEDA60A0046E924 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,8 +53,6 @@
 		6B7A98EF1CEDA60A0046E924 /* SMSLocalizationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMSLocalizationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7A98F31CEDA60A0046E924 /* SMSLocalizationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLocalizationUITests.swift; sourceTree = "<group>"; };
 		6B7A98F51CEDA60A0046E924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B7A99011CEDA6E40046E924 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Main.strings; sourceTree = "<group>"; };
-		6B7A99021CEDA6E40046E924 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6B7A99061CEDA7010046E924 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B7A99081CEDA7040046E924 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B7A99091CEDA7540046E924 /* LanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
@@ -81,6 +83,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		294234461DE3142C00E08984 /* LanguageManager */ = {
+			isa = PBXGroup;
+			children = (
+				6B7A99071CEDA7010046E924 /* Localizable.strings */,
+				6B7A99091CEDA7540046E924 /* LanguageManager.swift */,
+				294234441DE3141D00E08984 /* CustomLocale.swift */,
+			);
+			name = LanguageManager;
+			sourceTree = "<group>";
+		};
+		294234491DE3144700E08984 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				294234471DE3143F00E08984 /* GlobalConstants.swift */,
+				294234461DE3142C00E08984 /* LanguageManager */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		6B7A98C71CEDA60A0046E924 = {
 			isa = PBXGroup;
 			children = (
@@ -104,14 +125,13 @@
 		6B7A98D21CEDA60A0046E924 /* SMSLocalization */ = {
 			isa = PBXGroup;
 			children = (
-				6B7A99091CEDA7540046E924 /* LanguageManager.swift */,
 				6B7A98D31CEDA60A0046E924 /* AppDelegate.swift */,
+				294234491DE3144700E08984 /* Helpers */,
 				6B7A98D51CEDA60A0046E924 /* ViewController.swift */,
 				6B7A98D71CEDA60A0046E924 /* Main.storyboard */,
 				6B7A98DA1CEDA60A0046E924 /* Assets.xcassets */,
 				6B7A98DC1CEDA60A0046E924 /* LaunchScreen.storyboard */,
 				6B7A98DF1CEDA60A0046E924 /* Info.plist */,
-				6B7A99071CEDA7010046E924 /* Localizable.strings */,
 			);
 			path = SMSLocalization;
 			sourceTree = "<group>";
@@ -202,13 +222,16 @@
 				TargetAttributes = {
 					6B7A98CF1CEDA60A0046E924 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 					6B7A98E31CEDA60A0046E924 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 6B7A98CF1CEDA60A0046E924;
 					};
 					6B7A98EE1CEDA60A0046E924 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 6B7A98CF1CEDA60A0046E924;
 					};
 				};
@@ -266,7 +289,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294234451DE3141D00E08984 /* CustomLocale.swift in Sources */,
 				6B7A990A1CEDA7540046E924 /* LanguageManager.swift in Sources */,
+				294234481DE3143F00E08984 /* GlobalConstants.swift in Sources */,
 				6B7A98D61CEDA60A0046E924 /* ViewController.swift in Sources */,
 				6B7A98D41CEDA60A0046E924 /* AppDelegate.swift in Sources */,
 			);
@@ -308,7 +333,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				6B7A98D81CEDA60A0046E924 /* Base */,
-				6B7A99011CEDA6E40046E924 /* fi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -317,7 +341,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				6B7A98DD1CEDA60A0046E924 /* Base */,
-				6B7A99021CEDA6E40046E924 /* fi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -424,9 +447,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SMSLocalization/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartmobe.Localize.SMSLocalization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -435,9 +460,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SMSLocalization/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartmobe.Localize.SMSLocalization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -449,6 +476,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartmobe.Localize.SMSLocalizationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SMSLocalization.app/SMSLocalization";
 			};
 			name = Debug;
@@ -461,6 +489,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartmobe.Localize.SMSLocalizationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SMSLocalization.app/SMSLocalization";
 			};
 			name = Release;
@@ -472,6 +501,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartmobe.Localize.SMSLocalizationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SMSLocalization;
 			};
 			name = Debug;
@@ -483,6 +513,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartmobe.Localize.SMSLocalizationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SMSLocalization;
 			};
 			name = Release;
@@ -506,6 +537,7 @@
 				6B7A98FA1CEDA60A0046E924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B7A98FB1CEDA60A0046E924 /* Build configuration list for PBXNativeTarget "SMSLocalizationTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +546,7 @@
 				6B7A98FD1CEDA60A0046E924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B7A98FE1CEDA60A0046E924 /* Build configuration list for PBXNativeTarget "SMSLocalizationUITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +555,7 @@
 				6B7A99001CEDA60A0046E924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
