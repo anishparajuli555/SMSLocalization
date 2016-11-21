@@ -1,8 +1,6 @@
 # SMSLocalization: 
 
-Note: This is just a helper class that lets you integrate multi language support in your app withing few minutes.
-
-*This is Not a library.* 
+Note: This is just a helper class written in **SWIFT3** that lets you integrate multi language support in your app within few minutes.
  
 **How to use**
 
@@ -19,6 +17,19 @@ Note: This is just a helper class that lets you integrate multi language support
 4.Localize your strings file by selecting the strings file and selecting Localize button under inspector.
 
 ![screen shot 2016-11-21 at 3 04 05 pm](https://cloud.githubusercontent.com/assets/7752578/20482230/a58edc7a-b013-11e6-92ae-2d82e4a7f37f.png)
+
+A pop up appears..Just choose all languages you have set.
+
+![screen shot 2016-11-21 at 6 13 27 pm](https://cloud.githubusercontent.com/assets/7752578/20482721/4048cd1e-b016-11e6-98e5-307b5940dc72.png)
+
+
+
+![screen shot 2016-11-21 at 6 14 43 pm](https://cloud.githubusercontent.com/assets/7752578/20482756/693937fe-b016-11e6-9119-bc593030005e.png)
+
+
+
+You need to see the files generated for the set localizations.
+
 
 This way you will generate files with extension "lproj".Now you get strings from this bundle using following method
 
