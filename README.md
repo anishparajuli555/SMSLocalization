@@ -31,10 +31,11 @@ A pop up appears..Just choose all languages you have set.
 You need to see the files generated for the set localizations.
 
 
-This way you will generate files with extension "lproj".Now you get strings from this bundle using following method
+This way you will generate files with extension "lproj".
 
 ![screen shot 2016-11-21 at 5 55 28 pm](https://cloud.githubusercontent.com/assets/7752578/20482250/c80912b6-b013-11e6-9da6-3e501a4dde9e.png)
 
+ This all steps are to help you get strings from bundle using following method provided by Xcode:
 `NSLocalizedString("key", bundle: bundle, comment: "To help translator")`
 
 
